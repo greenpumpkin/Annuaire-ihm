@@ -20,12 +20,19 @@ angular.module('pooIhmExemplesApp')
         $scope.users = data.data;
       });
 
-    if($routeParams.userId) {
+      if($routeParams.userId) {
       $http.get('http://poo-ihm-2015-rest.herokuapp.com/api/Users/' + $routeParams.userId)
       .success(function(data) {
         if (data.status == "success") {
           $scope.currentUser = data.data;
         }
       });
+
+    $scope.delete = function(id) {
+        $http.delete("http://poo-ihm-2015-rest.herokuapp.com/api/Users/" + id);
+      }
+
+    $scope.search = function(id) {}
+
     }
   }]);

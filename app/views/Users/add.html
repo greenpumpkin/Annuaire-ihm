@@ -1,10 +1,14 @@
-<!DOCTYPE html>
-<html>
-<head lang="en">
-    <meta charset="UTF-8">
-    <title></title>
-</head>
-<body>
-
-</body>
-</html>
+<form role="form">
+    <h1>Add a user:</h1>
+    <br/>
+        <label for="name">Name</label>
+        <input type="text" class="form-control" id="name" placeholder="Name" ng-model="user.name">
+        <label for="surname">Surname</label>
+        <input type="text" class="form-control" id="surname" placeholder="Surname" ng-model="user.surname">
+        <label for="email">E-m@il</label>
+        <input type="email" class="form-control" id="email" placeholder="E-m@il" ng-model="user.email">
+        <label for="website">Website</label>
+        <input type="text" class="form-control" id="website" placeholder="Website" ng-model="user.website">
+    <br/>
+    <button type="submit" class="btn btn-primary" ng-click="addUser()">Add</button>
+</form>

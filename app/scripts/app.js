@@ -35,17 +35,9 @@ angular
         templateUrl: 'views/Users/show.html',
         controller: 'UsersCtrl'
       })
-        .when('/add', {
-            templateUrl: 'views/Users/add.html',
-            controller: 'AddCtrl'
-        })
-        .when('/:userId/edit', {
-            templateUrl: 'views/Users/edit.html',
-            controller: 'EditCtrl'
-        })
-        .when('/:userId/delete', {
-            templateUrl: 'views/Users/delete.html',
-            controller: 'DeleteCtrl'
+      .when('/add', {
+         templateUrl: 'views/Users/add.html',
+         controller: 'AddCtrl'
         })
       .otherwise({
         redirectTo: '/'
