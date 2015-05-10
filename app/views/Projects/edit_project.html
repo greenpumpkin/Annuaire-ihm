@@ -1,0 +1,12 @@
+<form role="form">
+    <h1>Edit a project</h1>
+    <br/>
+    <label for="title">Project title</label>
+    <input type="text" class="form-control" id="title" placeholder="Project title" ng-model="currentProject.title">
+    <label for="description">Description</label>
+    <textarea class="form-control" id="description" placeholder="Description" ng-model="currentProject.description"> </textarea>
+    <label for="start">Start year</label>
+    <input type="number" class="form-control" id="start" placeholder="Start year" ng-model="currentProject.year">
+    <br/>
+    <button type="submit" class="btn btn-primary" ng-click="addProject(currentProject)">Edit</button>
+</form>

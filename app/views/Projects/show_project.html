@@ -1,0 +1,9 @@
+<div>
+    <h1>Project: {{ currentProject.title }}</h1>
+    <p>Description: {{ currentProject.description }}</p>
+    <p>Start year: {{ currentProject.year }}</p>
+
+    <a href="#/edit_project/{{currentProject.id}}" class="btn btn-primary" >Edit</button></a>
+    <button type="button" ng-click="deleteProj(currentProject.id)" class="btn btn-primary" >Delete</button>
+    <a href="#/projects" type="button" class="btn btn-primary">Go back</a>
+</div>
