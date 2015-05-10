@@ -6,6 +6,7 @@
     <p>Created at : {{currentUser.createdAt}}</p>
     <p>Updated at : {{currentUser.updatedAt}}</p>
 
+    <a href="#/edit/{{currentUser.id}}" class="btn btn-primary" >Edit</button></a>
     <button type="button" ng-click="delete(currentUser.id)" class="btn btn-primary" >Delete</button>
     <a href="#/users" type="button" class="btn btn-primary">Go back</a>
 </div>

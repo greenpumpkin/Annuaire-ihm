@@ -28,15 +28,5 @@ angular.module('pooIhmExemplesApp')
                     }
                 });
 
-        $scope.addUser = function() {
-
-                var add = {};
-                add.name = name;
-                add.surname = surname;
-                add.mail = mail;
-                add.website = website;
-                $http.post('http://poo-ihm-2015-rest.herokuapp.com/api/Users',add);
-
-        }}
-
+        }
         }]);

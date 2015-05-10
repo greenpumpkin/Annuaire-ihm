@@ -1,9 +1,10 @@
 <div>
 
-<h2>Search a user:</h2>
+<h1>Search a user</h1>
+    <br/>
     <p>Name : <input type="text" ng-model="user.name"></p>
 
-<h3>Users list:</h3>
+<h2>Users list:</h2>
 <ul>
 <li ng-repeat="user in users | filter:user"><a href="#/users/{{ user.id }}">{{user.name}}, {{user.surname}}</a> </li>
 </ul>
