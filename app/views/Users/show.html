@@ -1,4 +1,6 @@
 <div>
+    <h1>User:</h1>
+    <br/>
     <p>Name: {{currentUser.name}}</p>
     <p>Surname: {{currentUser.surname}}</p>
     <p>E-m@il: {{currentUser.email}}</p>
@@ -8,5 +10,10 @@
 
     <a href="#/edit/{{currentUser.id}}" class="btn btn-primary" >Edit</button></a>
     <button type="button" ng-click="delete(currentUser.id)" class="btn btn-primary" >Delete</button>
-    <a href="#/users" type="button" class="btn btn-primary">Go back</a>
+    <btn type="button" onclick="history.go(-1)" class="btn btn-primary">Go back</btn>
+    <br/>
+    <br/>
+    <h1>Projects:</h1>
+    <br/>
+    <li ng-repeat="role in roles"><a href="#/projects/{{role.ProjectId}}">{{role.name}} in project {{role.ProjectId}}</a></li>
 </div>

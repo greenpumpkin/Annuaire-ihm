@@ -5,5 +5,10 @@
 
     <a href="#/edit_project/{{currentProject.id}}" class="btn btn-primary" >Edit</button></a>
     <button type="button" ng-click="deleteProj(currentProject.id)" class="btn btn-primary" >Delete</button>
-    <a href="#/projects" type="button" class="btn btn-primary">Go back</a>
+    <button onclick="history.go(-1)" type="button" class="btn btn-primary">Go back</button>
+    <br/>
+    <br/>
+    <h1>People roles for the current project:</h1>
+    <br/>
+    <li ng-repeat="role in roles"><a href="#/projects/{{role.ProjectId}}">{{role.name}}</a></li>
 </div>
