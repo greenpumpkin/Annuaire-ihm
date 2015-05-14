@@ -1,14 +1,25 @@
 <div>
-    <h1>Project: {{ currentProject.title }}</h1>
-    <p>Description: {{ currentProject.description }}</p>
-    <p>Start year: {{ currentProject.year }}</p>
-
-    <a href="#/edit_project/{{currentProject.id}}" class="btn btn-primary" >Edit</button></a>
-    <button type="button" ng-click="deleteProj(currentProject.id)" class="btn btn-primary" >Delete</button>
-    <button onclick="history.go(-1)" type="button" class="btn btn-primary">Go back</button>
+    <h1>Project : {{ project.title }}</h1>
+    <p>Description : {{ project.description }}</p>
+    <p>Start year : {{ project.year }}</p>
+    <p>Created at : {{project.createdAt}}</p>
+    <p>Updated at : {{project.updatedAt}}</p>
+    <br/>
+    <a href="#/edit_project/{{project.id}}" class="btn btn-primary" >Edit</button></a>
     <br/>
     <br/>
-    <h1>People roles for the current project:</h1>
-    <br/>
-    <li ng-repeat="role in roles"><a href="#/projects/{{role.ProjectId}}">{{role.name}}</a></li>
 </div>
+<div>
+    <h1>People roles for the current project :</h1>
+    <br/>
+    <table class="table table-bordered">
+        <tr ng-repeat="user in users">
+            <td>Name : {{ user.name }}</td>
+            <td>Surname : {{ user.surname }}</td>
+            <td>Role : {{ user.role }}</td>
+        </tr>
+    </table>
+</div>
+<br/>
+<br/>
+<a href="#/projects" type="button" class="btn btn-danger">Go back</a>

@@ -1,19 +1,25 @@
-<div>
+<div class="ficheUser">
     <h1>User:</h1>
     <br/>
-    <p>Name: {{currentUser.name}}</p>
-    <p>Surname: {{currentUser.surname}}</p>
-    <p>E-m@il: {{currentUser.email}}</p>
-    <p>Website: {{currentUser.website}}</p>
-    <p>Created at : {{currentUser.createdAt}}</p>
-    <p>Updated at : {{currentUser.updatedAt}}</p>
-
-    <a href="#/edit/{{currentUser.id}}" class="btn btn-primary" >Edit</button></a>
-    <button type="button" ng-click="delete(currentUser.id)" class="btn btn-primary" >Delete</button>
-    <btn type="button" onclick="history.go(-1)" class="btn btn-primary">Go back</btn>
+    <p>Name : {{user.name}}</p>
+    <p>Surname : {{user.surname}}</p>
+    <p>E-m@il : {{user.email}}</p>
+    <p>Website : {{user.website}}</p>
+    <p>Created at : {{user.createdAt}}</p>
+    <p>Updated at : {{user.updatedAt}}</p>
+    <br/>
+    <a href="#/edit/{{user.id}}" class="btn btn-primary" >Edit user</button></a>
+</div>
+<div class="ficheProjUser">
+    <h1>Project :</h1>
+    <br/>
+    <p>Title : {{ userProject.title }}</p>
+    <p>Description : {{ userProject.description }}</p>
+    <p>Role : {{ userRole.name }}</p>
+    <br/>
+    <a href="#/edit_project/{{project.id}}" class="btn btn-primary" >Edit project</button></a>
     <br/>
     <br/>
-    <h1>Projects:</h1>
     <br/>
-    <li ng-repeat="role in roles"><a href="#/projects/{{role.ProjectId}}">{{role.name}} in project {{role.ProjectId}}</a></li>
+    <a href="#/users" type="button" class="btn btn-danger">Go back</a>
 </div>

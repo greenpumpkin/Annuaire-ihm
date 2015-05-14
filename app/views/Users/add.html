@@ -1,14 +1,14 @@
 <form role="form">
     <h1>Add a user</h1>
     <br/>
-        <label for="name">Name</label>
-        <input type="text" class="form-control" id="name" placeholder="Name" ng-model="currentUser.name">
-        <label for="surname">Surname</label>
-        <input type="text" class="form-control" id="surname" placeholder="Surname" ng-model="currentUser.surname">
-        <label for="email">E-m@il</label>
-        <input type="email" class="form-control" id="email" placeholder="E-m@il" ng-model="currentUser.email">
-        <label for="website">Website</label>
-        <input type="text" class="form-control" id="website" placeholder="Website" ng-model="currentUser.website">
+    <label for="name">Name</label>
+    <input type="text" class="form-control" id="name" ng-model="user.name">
+    <label for="surname">Surname</label>
+    <input type="text" class="form-control" id="surname" ng-model="user.surname">
+    <label for="email">E-m@il</label>
+    <input type="text" class="form-control" id="email" ng-model="user.email">
+    <label for="website">Website</label>
+    <input type="text" class="form-control" id="website" ng-model="user.website">
     <br/>
-    <button type="submit" class="btn btn-primary" ng-click="add(currentUser)">Add</button>
+    <button type="submit" class="btn btn-primary" ng-click="addInfo()">Add</button>
 </form>

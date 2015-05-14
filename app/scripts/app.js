@@ -25,43 +25,43 @@ angular
       })
       .when('/users' , {
         templateUrl: 'views/Users/list.html',
-        controller: 'UsersCtrl'
+        controller: 'MainCtrl'
       })
       .when('/users/:userId', {
         templateUrl: 'views/Users/show.html',
-        controller: 'UsersCtrl'
+        controller: 'UserShowCtrl'
       })
       .when('/add', {
          templateUrl: 'views/Users/add.html',
-         controller: 'UsersCtrl'
+         controller: 'UserAddCtrl'
         })
       .when('/edit', {
          templateUrl: 'views/Users/edit.html',
-         controller: 'UsersCtrl'
+         controller: 'UserEditCtrl'
         })
       .when('/edit/:userId', {
          templateUrl: 'views/Users/edit.html',
-         controller: 'UsersCtrl'
+         controller: 'UserEditCtrl'
         })
       .when('/projects' , {
          templateUrl: 'views/Projects/list_projects.html',
-         controller: 'ProjCtrl'
+         controller: 'MainProjCtrl'
         })
       .when('/projects/:projectId', {
          templateUrl: 'views/Projects/show_project.html',
-         controller: 'ProjCtrl'
+         controller: 'ShowProjCtrl'
         })
       .when('/add_project', {
          templateUrl: 'views/Projects/add_project.html',
-         controller: 'ProjCtrl'
+         controller: 'AddProjCtrl'
         })
         .when('/edit_project', {
         templateUrl: 'views/Projects/edit_project.html',
-        controller: 'ProjCtrl'
+        controller: 'EditProjCtrl'
       })
         .when('/edit_project/:projectId', {
           templateUrl: 'views/Projects/edit_project.html',
-          controller: 'ProjCtrl'
+          controller: 'EditProjCtrl'
         })
       .otherwise({
         redirectTo: '/'
