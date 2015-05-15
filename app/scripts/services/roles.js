@@ -34,8 +34,20 @@ angular.module('pooIhmExemplesApp')
         }
 
         /** Ajouter un role dans un projet */
-        this.addRole = function(projectId, userId, successCB, errorCB) {
+        this.addRole = function(userId, projectId, successCB, errorCB) {
             $http.put('http://poo-ihm-2015-rest.herokuapp.com/api/Projects/' + projectId + '/Users/' + userId)
+                .success(function (data) {
+                    if (data.status === 'success') {
+                        successCB(data.data);
+                    } else {
+                        errorCB(data.data);
+                    }
+                });
+        }
+
+        /** Editer un role */
+        this.edit = function(role, successCB, errorCB) {
+            $http.put('http://poo-ihm-2015-rest.herokuapp.com/api/Roles/' + role.id, role)
                 .success(function (data) {
                     if (data.status === 'success') {
                         successCB(data.data);
@@ -58,8 +70,8 @@ angular.module('pooIhmExemplesApp')
         }
 
         /** Récupère tous les utilisateurs d'un projet */
-        this.getProjectUsers = function (projId, successCB, errorCB) {
-            $http.get('http://poo-ihm-2015-rest.herokuapp.com/api/Projects/' + projId + '/Roles')
+        this.getProjectUsers = function (projectId, successCB, errorCB) {
+            $http.get('http://poo-ihm-2015-rest.herokuapp.com/api/Projects/' + projectId + '/Roles')
                 .success(function (data) {
                     if (data.status === 'success') {
                         successCB(data.data);

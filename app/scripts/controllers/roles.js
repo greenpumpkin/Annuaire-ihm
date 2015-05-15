@@ -32,11 +32,11 @@ angular.module('pooIhmExemplesApp')
             $scope.error = data;
         });
 
-        $scope.addInfo = function(){
+        $scope.addInfo = function() {
 
             $scope.role.UserId = $scope.currentUser.id;
             $scope.role.ProjectId = $scope.currentProject.id;
-            $location.path('/' + $scope.role.UserId + '/detailsUser');
+            $location.path('/users/' + $scope.role.UserId );
             Roles.add($scope.role, function(data){
 
                 $scope.result = data;
