@@ -63,6 +63,14 @@ angular
           templateUrl: 'views/Projects/edit_project.html',
           controller: 'EditProjCtrl'
         })
+        .when('/add_role', {
+            templateUrl: 'views/Roles/add_role.html',
+            controller: 'RoleAddCtrl'
+        })
+        .when('/add_role/:projectId', {
+            templateUrl: 'views/Roles/add_role.html',
+            controller: 'RoleAddCtrl'
+        })
       .otherwise({
         redirectTo: '/'
       });
