@@ -114,14 +114,17 @@ angular.module('pooIhmExemplesApp')
                     Projects.getUsers($routeParams.projectId,
                         function (userInfos) {
 
-                            var users = new Array();
+                            var array = new Array();
+
                             Projects.getRoles($routeParams.projectId,
                                 function (userRole) {
+
                                     for(var m = 0 ; m < userRole.length; ++m){
                                         for(var n = 0 ; n < userInfos.length; ++n){
+
                                             if(userRole[m].UserId === userInfos[n].id){
 
-                                                var user = {
+                                                var features = {
 
                                                     surname: userInfos[n].surname,
                                                     name: userInfos[n].name,
@@ -129,27 +132,33 @@ angular.module('pooIhmExemplesApp')
 
                                                 }
 
-                                                users.push(user);
+                                                array.push(features);
                                                 break;
                                             }
                                         }
                                     }
 
-                                    $scope.users = users;
+                                    $scope.users = array;
+
                                 }, function (data) {
+
                                     $scope.error = data;
 
                                 });
                         },
 
                         function (data) {
+
                             $scope.error = data;
+
                         });
 
                 },
 
                 function (data) {
+
                     $scope.error = data;
+
                 });
         }
     }]);

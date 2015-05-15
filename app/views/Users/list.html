@@ -1,13 +1,15 @@
 <div class="col-lg-12">
-    <h1>Search a user</h1>
+    <h2>Search a user</h2>
     <br/>
     <p>By name, surname, website or e-mail: <input type="text" ng-model="user"></p>
     </p>
 </div>
 
-<a href="#/add"><button class="btn btn-primary">Add a user</button></a>
+<a href="#/add"><button class="btn btn-success" id="addUser">Add a user</button></a>
 <br/>
-<h1>Users list</h1>
+<div class="col-lg-offset-4 col-lg-5" id="list">
+<h2>Users list</h2>
+<br/>
 <div class="col-lg-12">
     <table class="table table-bordered table-hover">
         <tr ng-repeat="user in users | filter:user">
@@ -15,4 +17,5 @@
             <td><a href="" ng-click="delete(user.id)"><i class="glyphicon glyphicon-trash"></i></a></td>
         </tr>
     </table>
+</div>
 </div>

@@ -34,6 +34,30 @@ angular.module('pooIhmExemplesApp')
                 });
         };
 
+        /** Récupérer les rôles grâce à l'id de l'utilisateur */
+        this.getUserRole = function(userId, successCB, errorCB) {
+            $http.get('http://poo-ihm-2015-rest.herokuapp.com/api/Users/' + userId + '/Roles/')
+                .success(function (data) {
+                    if (data.status === 'success') {
+                        successCB(data.data);
+                    } else {
+                        errorCB(data.data);
+                    }
+                });
+        }
+
+        /** Récupérer un projet grâce à l'id de l'utilisateur */
+        this.getProject = function(userId, successCB, errorCB) {
+            $http.get('http://poo-ihm-2015-rest.herokuapp.com/api/Users/' + userId + '/Projects/')
+                .success(function (data) {
+                    if (data.status === 'success') {
+                        successCB(data.data);
+                    } else {
+                        errorCB(data.data);
+                    }
+                });
+        }
+
         /** Ajouter un utilisateur */
         this.add = function(user, successCB, errorCB) {
             $http.post('http://poo-ihm-2015-rest.herokuapp.com/api/Users', user)

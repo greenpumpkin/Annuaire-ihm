@@ -1,22 +1,26 @@
 <div>
-    <h1>Project : {{ project.title }}</h1>
+    <h2>Project : {{ project.title }}</h2>
+    <br/>
     <p>Description : {{ project.description }}</p>
     <p>Start year : {{ project.year }}</p>
     <p>Created at : {{project.createdAt}}</p>
     <p>Updated at : {{project.updatedAt}}</p>
     <br/>
-    <a href="#/edit_project/{{project.id}}" class="btn btn-primary" >Edit</button></a>
+    <a href="#/edit_project/{{project.id}}" class="btn btn-success" id="edit1" >Edit</button></a>
     <br/>
     <br/>
 </div>
 <div>
-    <h1>People roles for the current project :</h1>
+    <h2>People roles for the current project :</h2>
     <br/>
     <table class="table table-bordered">
+        <td>Name</td>
+        <td>Surname</td>
+        <td>Role</td>
         <tr ng-repeat="user in users">
-            <td>Name : {{ user.name }}</td>
-            <td>Surname : {{ user.surname }}</td>
-            <td>Role : {{ user.role }}</td>
+            <td>{{ user.name }}</td>
+            <td>{{ user.surname }}</td>
+            <td>{{ user.role }}</td>
         </tr>
     </table>
 </div>

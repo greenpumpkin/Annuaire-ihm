@@ -105,22 +105,54 @@ angular.module('pooIhmExemplesApp')
             'Karma'
         ];
 
-        if ($routeParams.userId) {
-            Users.get($routeParams.userId,
-                function(data) {
-                    $scope.user = data;
-                },
-                function(data) {
-                    $scope.error = data;
-                });
 
-            $http.get('http://poo-ihm-2015-rest.herokuapp.com/api/Users/'+ $routeParams.userId +'/Roles')
-                .success(function(data) {
-                    $scope.userRole = data.data[0];
-                    $http.get('http://poo-ihm-2015-rest.herokuapp.com/api/Projects/'+ $scope.userRole.ProjectId)
-                        .success(function(data) {
-                            $scope.userProject = data.data;
-                        });
+        if ($routeParams.userId) {
+
+            Users.get($routeParams.userId,
+                function (data) {
+
+                    $scope.user = data;
+                    var projectData = new Array();
+                    Users.getProject($routeParams.userId,
+                        function (data) {
+
+                            projectData = data;
+                            var roleData = new Array();
+                            Users.getUserRole($routeParams.userId,
+                                function(data){
+
+                                    roleData = data;
+                                    for(var m = 0 ; m < roleData.length ; ++m){
+                                        for(var n = 0 ; n < projectData.length ; ++n) {
+
+                                            if(roleData[m].ProjectId === projectData[n].id){
+                                                roleData[m].description = projectData[n].description;
+                                                roleData[m].title = projectData[n].title;
+                                                break;
+
+                                            }
+                                        }
+                                    }
+
+                                    $scope.projects = roleData;
+                                }, function (data) {
+
+                                    $scope.error = data;
+
+                                })
+
+                        }, function (data) {
+
+                            $scope.error = data;
+
+                        })
+                },
+
+                function (data) {
+
+                    $scope.error = data;
+
                 });
         }
+
     }]);

@@ -1,5 +1,5 @@
 <div class="ficheUser">
-    <h1>User:</h1>
+    <h2>User :</h2>
     <br/>
     <p>Name : {{user.name}}</p>
     <p>Surname : {{user.surname}}</p>
@@ -8,18 +8,23 @@
     <p>Created at : {{user.createdAt}}</p>
     <p>Updated at : {{user.updatedAt}}</p>
     <br/>
-    <a href="#/edit/{{user.id}}" class="btn btn-primary" >Edit user</button></a>
+    <a href="#/edit/{{user.id}}" class="btn btn-success" id="edit1" >Edit user</button></a>
 </div>
 <div class="ficheProjUser">
-    <h1>Project :</h1>
+    <h2>Projects :</h2>
     <br/>
-    <p>Title : {{ userProject.title }}</p>
-    <p>Description : {{ userProject.description }}</p>
-    <p>Role : {{ userRole.name }}</p>
-    <br/>
-    <a href="#/edit_project/{{project.id}}" class="btn btn-primary" >Edit project</button></a>
-    <br/>
-    <br/>
-    <br/>
-    <a href="#/users" type="button" class="btn btn-danger">Go back</a>
+    <table class="table table-bordered">
+        <td>Title</td>
+        <td>Description</td>
+        <td>Role</td>
+        <tr ng-repeat="project in projects">
+            <td>{{ project.title }}</td>
+            <td>{{ project.description }}</td>
+            <td>{{ project.name }}</td>
+        </tr>
+    </table>
+
 </div>
+<br/>
+<br/>
+<a href="#/users" type="button" class="btn btn-danger">Go back</a>
