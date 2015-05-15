@@ -126,8 +126,8 @@ angular.module('pooIhmExemplesApp')
 
                                                 var features = {
 
-                                                    surname: userInfos[n].surname,
                                                     name: userInfos[n].name,
+                                                    surname: userInfos[n].surname,
                                                     role: userRole[m].name
 
                                                 }
